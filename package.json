@@ -1,0 +1,24 @@
+{
+  "name": "prueba-app-de-esctritorio-con-base-de-datos-local",
+  "version": "1.0.0",
+  "description": "Prueba de aplicacion de escritorio con base de datos",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaquingutierrez/electron-app.git"
+  },
+  "author": "Joaquin Gutierrez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joaquingutierrez/electron-app/issues"
+  },
+  "homepage": "https://github.com/joaquingutierrez/electron-app#readme",
+  "dependencies": {
+    "electron": "^23.1.4",
+    "electron-store": "^8.1.0"
+  }
+}
