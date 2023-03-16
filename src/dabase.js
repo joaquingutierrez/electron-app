@@ -16,6 +16,7 @@ const productSchema = {
 };
 
 const store = new Store({productSchema});
+store.path = "./src/db/config.json"
 
 module.exports = {
     store

@@ -1,4 +1,5 @@
 const submitButton = document.getElementById("submitButton")
+const { ipcRenderer } = require("electron")
 
 const handleSubmit = (e) => {
     e.preventDefault()
@@ -12,7 +13,13 @@ const handleSubmit = (e) => {
         return alert("Error: faltan datos")
     }
 
-    console.log("Todo bien")
+    const newProduct = {
+        code,
+        title,
+        description,
+        stock: parseInt(stock)
+    }
+    ipcRenderer.send("newProduct", newProduct)
 }
 
 submitButton.addEventListener("click", handleSubmit)

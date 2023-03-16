@@ -1,8 +1,7 @@
 const { createWindow } = require("./main")
 const { app } = require("electron")
 
-const {store} = require("./dabase")
-
+const { store } = require("./dabase")
 
 app.whenReady().then(() => {
     createWindow()
