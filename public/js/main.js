@@ -23,3 +23,18 @@ const handleSubmit = (e) => {
 }
 
 submitButton.addEventListener("click", handleSubmit)
+
+const productListSection = document.getElementById("productList")
+
+const productListRender = async () => {
+    try {
+        const result = await ipcRenderer.invoke("producListReq")
+        console.log(result)
+    } catch (err) {
+        console.log("err",err)
+    }
+}
+
+
+
+productListRender()

@@ -19,6 +19,11 @@ ipcMain.on("newProduct", (e, data) => {
     store.set(data.code, data)
 })
 
+ipcMain.handle("producListReq", () => {
+    const data = store.store
+    return data
+})
+
 module.exports = {
     createWindow
 }
