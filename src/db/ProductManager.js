@@ -29,6 +29,16 @@ class ProductManager {
         const data = await promiseGetOneProduct
         return data
     }
+    async findProductsByTitle(text) {
+        const searchObj = new RegExp(text)
+        const promiseFindProductBtTitle = new Promise((res,rej) => {
+            productDB.find({title: searchObj}, (err, docs) => {
+                err ? rej(err) : res(docs)
+            })
+        })
+        const data = await promiseFindProductBtTitle
+        return data
+    }
 }
 
     const productList = new ProductManager()

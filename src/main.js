@@ -23,6 +23,10 @@ ipcMain.handle("producListReq",  async () => {
     const data = await productList.getAllProducts()
     return data
 })
+ipcMain.handle("findProductByTitle",  async (event, value) => {
+    const data = await productList.findProductsByTitle(value)
+    return data
+})
 
 
 
