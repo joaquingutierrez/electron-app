@@ -29,7 +29,22 @@ const productListSection = document.getElementById("productList")
 const productListRender = async () => {
     try {
         const result = await ipcRenderer.invoke("producListReq")
-        console.log(result)
+        const renderCards = (result) => {
+            let acum = ""
+            result.map(element => {
+                acum += `
+                    <div>
+                        <h3>Código: ${element.code}</h3>
+                        <h3>titulo: ${element.title}</h3>
+                        <h3>Descripción: ${element.description}</h3>
+                        <h3>Stock: ${element.stock}</h3>
+                    </div>
+                `
+            });
+            console.log("hola")
+            return acum
+        }
+        productListSection.innerHTML = renderCards(result)
     } catch (err) {
         console.log("err",err)
     }

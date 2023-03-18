@@ -21,7 +21,6 @@ ipcMain.on("newProduct", async (e, data) => {
 
 ipcMain.handle("producListReq",  async () => {
     const data = await productList.getAllProducts()
-    console.log(data)
     return data
 })
 
