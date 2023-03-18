@@ -1,7 +1,9 @@
 const { createWindow } = require("./main")
 const { app } = require("electron")
 
-const { store } = require("./dabase")
+require("./db/connection")
+
+
 
 app.whenReady().then(() => {
     createWindow()

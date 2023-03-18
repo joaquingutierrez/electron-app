@@ -19,6 +19,6 @@
   "homepage": "https://github.com/joaquingutierrez/electron-app#readme",
   "dependencies": {
     "electron": "^23.1.4",
-    "electron-store": "^8.1.0"
+    "nedb": "^1.8.0"
   }
 }

@@ -1,6 +1,6 @@
 const { BrowserWindow, ipcMain } = require('electron')
 
-const {store} = require("./dabase")
+const {productList} = require("./db/ProductManager")
 
 function createWindow() {
     const win = new BrowserWindow({
@@ -15,14 +15,17 @@ function createWindow() {
     win.loadFile('public/index.html')
 }
 
-ipcMain.on("newProduct", (e, data) => {
-    store.set(data.code, data)
+ipcMain.on("newProduct", async (e, data) => {
+    await productList.addProduct(data)
 })
 
-ipcMain.handle("producListReq", () => {
-    const data = store.store
+ipcMain.handle("producListReq",  async () => {
+    const data = await productList.getAllProducts()
+    console.log(data)
     return data
 })
+
+
 
 module.exports = {
     createWindow
