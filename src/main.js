@@ -31,6 +31,10 @@ ipcMain.handle("productDetail",  async (event, value) => {
     const data = await productList.getOneProduct(value)
     return data
 })
+ipcMain.handle("updateProduct",  async (event, code, field, newValue) => {
+    const data = await productList.updateProduct(code, field, newValue)
+    return data
+})
 
 
 module.exports = {

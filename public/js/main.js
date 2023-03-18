@@ -33,9 +33,9 @@ const renderProductDetail = async (code) => {
     productListSection.innerHTML = `
         <div>
             <h3>Código: ${result.code}</h3>
-            <h3>titulo: ${result.title}</h3>
-            <h3>Descripción: ${result.description}</h3>
-            <h3>Stock: ${result.stock}</h3>
+            <h3>titulo: ${result.title}</h3><input id="updateTitleValue"><button ref="${result.code}" id="updateTitle">Actualizar</button>
+            <h3>Descripción: ${result.description}</h3><input id="updateDescriptionValue"><button ref="${result.code}" id="updateDescription">Actualizar</button>
+            <h3>Stock: ${result.stock}</h3><input id="updateStockValue"><button ref="${result.code}" id="updateStock">Actualizar</button>
         </div>
     `
 }
@@ -43,7 +43,20 @@ const productDetailButtonEvent = () => {
     productDetail = document.querySelectorAll(".productDetail")
     if (productDetail.length > 0) {
         productDetail.forEach(el => {
-            el.addEventListener("click", (e) => renderProductDetail(e.target.id))
+            el.addEventListener("click", async (e) => {
+                await renderProductDetail(e.target.id)
+                const updateTitle = document.getElementById("updateTitle")
+                updateTitle.addEventListener("click", async (e)=> {
+                    try {
+                        const updateTitleValue = document.getElementById("updateTitleValue").value
+                        const productCode = e.target.attributes.ref.value
+                        const result = await ipcRenderer.invoke("updateProduct", productCode, "title", updateTitleValue)
+                        renderProductDetail(result.code)
+                    } catch (err) {
+                        console.log(err)
+                    }
+                })
+            })
         })
     }
 }

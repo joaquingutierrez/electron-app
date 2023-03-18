@@ -1,6 +1,7 @@
-{"code":"4","title":"1","description":"1","stock":1,"_id":"8nwP9OsCC5GDkJJE"}
+{"code":"4","title":"asd","description":"1","stock":1,"_id":"8nwP9OsCC5GDkJJE"}
 {"code":"3","title":"1","description":"1","stock":1,"_id":"AlEBPToSpgfbcMbk"}
-{"code":"1","title":"1","description":"1","stock":1,"_id":"HmFeFUiuCi0Szmj5"}
+{"code":"1","title":"asd","description":"1","stock":1,"_id":"HmFeFUiuCi0Szmj5"}
 {"code":"2","title":"1","description":"1","stock":1,"_id":"JSDEWvbvYnDQdcBp"}
 {"code":"5","title":"1","description":"1","stock":1,"_id":"lYzDBynvhN8181Do"}
 {"$$indexCreated":{"fieldName":"code","unique":true,"sparse":false}}
+{"code":"4","title":"Producto de Prueba","description":"1","stock":1,"_id":"8nwP9OsCC5GDkJJE"}
